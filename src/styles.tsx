@@ -1,4 +1,5 @@
 // ─── Design Tokens ─────────────────────────────────────────────────────────────
+// eslint-disable-next-line react-refresh/only-export-components
 export const colors = {
   bg: "#0a0e1a",
   surface: "rgba(15, 23, 42, 0.9)",
@@ -43,6 +44,7 @@ export const colors = {
   cyan: "#06b6d4",
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const shadows = {
   sm: "0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)",
   md: "0 4px 6px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2)",
@@ -51,6 +53,7 @@ export const shadows = {
   glowStrong: (color: string) => `0 0 30px ${color}66`,
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const radii = {
   sm: "6px",
   md: "10px",
@@ -59,6 +62,7 @@ export const radii = {
   full: "9999px",
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const transitions = {
   fast: "0.15s ease",
   normal: "0.2s ease",

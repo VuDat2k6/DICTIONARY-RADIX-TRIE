@@ -166,7 +166,9 @@ export class RadixTrie {
       const existingChild = new RadixTrieNode(suffix1);
       existingChild.isEndOfWord = foundChild.isEndOfWord;
       existingChild.meaning = foundChild.meaning;
-      existingChild.children = foundChild.children;
+      for (const [ck, cv] of foundChild.children) {
+        existingChild.children.set(ck, this._cloneNode(cv));
+      }
       middle.children.set(suffix1[0], existingChild);
 
       if (suffix2) {
@@ -321,7 +323,9 @@ export class RadixTrie {
         const merged = new RadixTrieNode(child.label + only.label);
         merged.isEndOfWord = only.isEndOfWord;
         merged.meaning = only.meaning;
-        merged.children = only.children;
+        for (const [ck, cv] of only.children) {
+          merged.children.set(ck, this._cloneNode(cv));
+        }
 
         node.children.set(child.label[0], merged);
         dn.push(child);
@@ -355,7 +359,9 @@ export class RadixTrie {
       const merged = new RadixTrieNode(child.label + only.label);
       merged.isEndOfWord = only.isEndOfWord;
       merged.meaning = only.meaning;
-      merged.children = only.children;
+      for (const [ck, cv] of only.children) {
+        merged.children.set(ck, this._cloneNode(cv));
+      }
 
       node.children.set(child.label[0], merged);
       dn.push(child);
